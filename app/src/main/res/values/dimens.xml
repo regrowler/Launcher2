@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="options_menu_icon_size">24dp</dimen>
+    <dimen name="bg_round_rect_radius">25dp</dimen>
+    <dimen name="bg_round_rect_radius_weather">10dp</dimen>
+</resources>

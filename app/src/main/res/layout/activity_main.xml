@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="settings"
+            type="com.example.custom2.settings.Settings" />
+        <variable
+            name="mainScreenParams"
+            type="com.example.custom2.mainScreen.MainScreenParameters" />
+        <variable
+            name="appModel"
+            type="com.example.custom2.appsScreen.AppsModel" />
+    </data>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/wall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/back228"
+            android:scaleType="centerCrop"/>
+
+        <com.example.custom2.mainScreen.MainScreenLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mainScreen"
+            android:alpha="@{mainScreenParams.alpha}">
+            <include layout="@layout/layout_main_screen"
+                app:params="@{mainScreenParams}"
+                app:sets="@{settings.setParams}"/>
+        </com.example.custom2.mainScreen.MainScreenLayout>
+
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/whiteSlice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="@{settings.whiteAlpha}"
+            android:visibility="visible"
+            android:background="@android:color/white">
+
+        </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/blackSlice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="@{mainScreenParams.blackAlpha}"
+            android:visibility="visible"
+            android:background="@android:color/black">
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.example.custom2.appsScreen.AppScreenlayout
+            android:layout_width="match_parent"
+            android:id="@+id/appScreen"
+            android:layout_height="match_parent">
+            <include layout="@layout/layout_apps"
+                app:appModel="@{appModel}"/>
+        </com.example.custom2.appsScreen.AppScreenlayout>
+
+        <com.example.custom2.settings.SettingsLayout
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/settings"
+                    app:settings="@{settings}">
+                </include>
+            </android.support.v4.widget.NestedScrollView>
+
+        </com.example.custom2.settings.SettingsLayout>
+
+        <com.example.custom2.swipes.SensorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.example.custom2.swipes.SensorLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent" android:layout_width="match_parent"
+        app:cardCornerRadius="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/round_rect_weather">
+    </LinearLayout>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:format12Hour="@null"
+                android:format24Hour="k:mm"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" android:id="@+id/textClock"/>
+
+        <TextView
+                android:id="@+id/temp"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/city" android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/weatherIcon" android:layout_marginEnd="16dp"/>
+        <ImageView
+                android:id="@+id/weatherIcon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="10dp"/>
+        <TextView
+                android:id="@+id/city"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/weatherIcon" android:layout_marginEnd="16dp"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
